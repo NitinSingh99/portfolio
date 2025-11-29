@@ -7,17 +7,32 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-teal-400: oklch(77.7% 0.152 181.912);
+    --color-teal-500: oklch(70.4% 0.14 182.503);
     --color-gray-200: oklch(92.8% 0.006 264.531);
     --color-gray-900: oklch(21% 0.034 264.665);
     --color-zinc-50: oklch(98.5% 0 0);
+    --color-zinc-100: oklch(96.7% 0.001 286.375);
+    --color-zinc-200: oklch(92% 0.004 286.32);
+    --color-zinc-400: oklch(70.5% 0.015 286.067);
+    --color-zinc-500: oklch(55.2% 0.016 285.938);
     --color-zinc-700: oklch(37% 0.013 285.805);
     --color-zinc-800: oklch(27.4% 0.006 286.033);
     --color-zinc-900: oklch(21% 0.006 285.885);
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
+    --text-sm: 0.875rem;
+    --text-sm--line-height: calc(1.25 / 0.875);
+    --text-xl: 1.25rem;
+    --text-xl--line-height: calc(1.75 / 1.25);
+    --text-3xl: 1.875rem;
+    --text-3xl--line-height: calc(2.25 / 1.875);
     --text-4xl: 2.25rem;
     --text-4xl--line-height: calc(2.5 / 2.25);
+    --text-5xl: 3rem;
+    --text-5xl--line-height: 1;
+    --font-weight-medium: 500;
     --font-weight-bold: 700;
     --radius-lg: 0.5rem;
     --radius-2xl: 1rem;
@@ -182,6 +197,9 @@
   .pointer-events-auto {
     pointer-events: auto;
   }
+  .relative {
+    position: relative;
+  }
   .mx-4 {
     margin-inline: calc(var(--spacing) * 4);
   }
@@ -193,6 +211,9 @@
   }
   .mt-10 {
     margin-top: calc(var(--spacing) * 10);
+  }
+  .block {
+    display: block;
   }
   .flex {
     display: flex;
@@ -294,6 +315,18 @@
   .bg-zinc-800 {
     background-color: var(--color-zinc-800);
   }
+  .fill-zinc-100 {
+    fill: var(--color-zinc-100);
+  }
+  .fill-zinc-700 {
+    fill: var(--color-zinc-700);
+  }
+  .stroke-teal-500 {
+    stroke: var(--color-teal-500);
+  }
+  .stroke-zinc-500 {
+    stroke: var(--color-zinc-500);
+  }
   .p-2 {
     padding: calc(var(--spacing) * 2);
   }
@@ -318,6 +351,9 @@
   .py-2 {
     padding-block: calc(var(--spacing) * 2);
   }
+  .pt-8 {
+    padding-top: calc(var(--spacing) * 8);
+  }
   .pt-14 {
     padding-top: calc(var(--spacing) * 14);
   }
@@ -327,16 +363,45 @@
   .align-middle {
     vertical-align: middle;
   }
+  .text-3xl {
+    font-size: var(--text-3xl);
+    line-height: var(--tw-leading, var(--text-3xl--line-height));
+  }
   .text-4xl {
     font-size: var(--text-4xl);
     line-height: var(--tw-leading, var(--text-4xl--line-height));
+  }
+  .text-5xl {
+    font-size: var(--text-5xl);
+    line-height: var(--tw-leading, var(--text-5xl--line-height));
+  }
+  .text-sm {
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height));
+  }
+  .text-xl {
+    font-size: var(--text-xl);
+    line-height: var(--tw-leading, var(--text-xl--line-height));
   }
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
   }
+  .font-medium {
+    --tw-font-weight: var(--font-weight-medium);
+    font-weight: var(--font-weight-medium);
+  }
   .text-black {
     color: var(--color-black);
+  }
+  .text-teal-400 {
+    color: var(--color-teal-400);
+  }
+  .text-teal-500 {
+    color: var(--color-teal-500);
+  }
+  .text-zinc-800 {
+    color: var(--color-zinc-800);
   }
   .underline {
     text-decoration-line: underline;
@@ -392,6 +457,47 @@
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
+  .not-\[\@media_\(prefers-color-scheme\:dark\)\]\:fill-teal-400\/10 {
+    @media not (prefers-color-scheme:dark) {
+      fill: color-mix(in srgb, oklch(77.7% 0.152 181.912) 10%, transparent);
+      @supports (color: color-mix(in lab, red, red)) {
+        fill: color-mix(in oklab, var(--color-teal-400) 10%, transparent);
+      }
+    }
+  }
+  .not-\[\@media_\(prefers-color-scheme\:dark\)\]\:stroke-teal-500 {
+    @media not (prefers-color-scheme:dark) {
+      stroke: var(--color-teal-500);
+    }
+  }
+  .group-hover\:fill-zinc-200 {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        fill: var(--color-zinc-200);
+      }
+    }
+  }
+  .group-hover\:stroke-teal-400 {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        stroke: var(--color-teal-400);
+      }
+    }
+  }
+  .group-hover\:stroke-zinc-400 {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        stroke: var(--color-zinc-400);
+      }
+    }
+  }
+  .group-hover\:stroke-zinc-700 {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        stroke: var(--color-zinc-700);
+      }
+    }
+  }
   .sm\:mx-8 {
     @media (width >= 40rem) {
       margin-inline: calc(var(--spacing) * 8);
@@ -422,6 +528,11 @@
       padding-inline: calc(var(--spacing) * 16);
     }
   }
+  .dark\:block {
+    @media (prefers-color-scheme: dark) {
+      display: block;
+    }
+  }
   .dark\:bg-black {
     @media (prefers-color-scheme: dark) {
       background-color: var(--color-black);
@@ -445,9 +556,19 @@
       background-color: var(--color-zinc-900);
     }
   }
+  .dark\:text-teal-400 {
+    @media (prefers-color-scheme: dark) {
+      color: var(--color-teal-400);
+    }
+  }
   .dark\:text-white {
     @media (prefers-color-scheme: dark) {
       color: var(--color-white);
+    }
+  }
+  .dark\:text-zinc-200 {
+    @media (prefers-color-scheme: dark) {
+      color: var(--color-zinc-200);
     }
   }
   .dark\:ring-white\/10 {
@@ -466,6 +587,15 @@
           @supports (color: color-mix(in lab, red, red)) {
             --tw-ring-color: color-mix(in oklab, var(--color-white) 20%, transparent);
           }
+        }
+      }
+    }
+  }
+  .\[\@media\(prefers-color-scheme\:dark\)\]\:group-hover\:stroke-zinc-400 {
+    @media (prefers-color-scheme:dark) {
+      &:is(:where(.group):hover *) {
+        @media (hover: hover) {
+          stroke: var(--color-zinc-400);
         }
       }
     }
