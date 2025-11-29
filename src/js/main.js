@@ -15,6 +15,9 @@ function loadComponents() {
     Object.keys(components).forEach(id => {
         fetch(components[id]).then(res => res.text()).then(data => {
             document.getElementById(id).innerHTML = data;
+            if (id === "header") {
+                initThemeToggle();
+            }
         });
     });
 }
@@ -41,14 +44,23 @@ function setTheme() {
 
     applyTheme(saved);
 
+}
+
+function initThemeToggle() {
     const themeToggleBtn = document.getElementById("theme-toggle");
     const lightIcon = document.getElementById("theme-toggle-light-icon");
     const darkIcon = document.getElementById("theme-toggle-dark-icon");
 
-    // On page load, set the correct icon
+    if (!themeToggleBtn || !lightIcon || !darkIcon) {
+        console.error("Theme toggle elements not found");
+        return;
+    }
+
+    // Initial state
     if (
         localStorage.theme === "dark" ||
-        (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
+        (!("theme" in localStorage) &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches)
     ) {
         document.documentElement.classList.add("dark");
         lightIcon.classList.remove("hidden");
@@ -57,7 +69,7 @@ function setTheme() {
         darkIcon.classList.remove("hidden");
     }
 
-    // Toggle theme on click
+    // Click handler
     themeToggleBtn.addEventListener("click", () => {
         lightIcon.classList.toggle("hidden");
         darkIcon.classList.toggle("hidden");
@@ -71,3 +83,5 @@ function setTheme() {
         }
     });
 }
+
+
