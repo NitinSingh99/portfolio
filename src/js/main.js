@@ -42,27 +42,6 @@ function setSystemTheme() {
     }
 }
 
-// Run immediately when script loads
-// setSystemTheme();
-
-// Optional: Listen for system theme changes and update automatically
-// window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-//     const html = document.documentElement;
-//     if (e.matches) {
-//         html.classList.add('dark');
-//     } else {
-//         html.classList.remove('dark');
-//     }
-// });
-
-// function applyTheme(mode) {
-//     html.classList.remove("light", "dark");
-//     html.classList.add(mode);
-
-//     html.style.colorScheme = mode;
-//     localStorage.setItem("theme", mode);
-// }
-
 function initThemeToggle() {
     const themeToggleBtn = document.getElementById("theme-toggle");
     const lightIcon = document.getElementById("theme-toggle-light-icon");
@@ -80,10 +59,10 @@ function initThemeToggle() {
             window.matchMedia("(prefers-color-scheme: dark)").matches)
     ) {
         document.documentElement.classList.add("dark");
-        lightIcon.classList.remove("hidden");
+        darkIcon.classList.remove("hidden");
     } else {
         document.documentElement.classList.remove("dark");
-        darkIcon.classList.remove("hidden");
+        lightIcon.classList.remove("hidden");
     }
 
     // Click handler
