@@ -4,7 +4,7 @@ init();
 
 function init() {
     loadComponents();
-    setTheme();
+    setSystemTheme();
 }
 
 function loadComponents() {
@@ -22,29 +22,46 @@ function loadComponents() {
     });
 }
 
-function setTheme() {
+// Function to set theme based on system preference
+function setSystemTheme() {
+    // Check if user's system prefers dark mode
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    console.log(prefersDark);
+    // Get the html element
     const html = document.documentElement;
-    // const modes = ["light", "dark"];
 
-    function applyTheme(mode) {
-        html.classList.remove("light", "dark");
-        html.classList.add(mode);
-
-        html.style.colorScheme = mode;
-        localStorage.setItem("theme", mode);
+    // Set the theme class
+    if (prefersDark) {
+        console.log('x');
+        // html.classList.remove('light');
+        html.classList.add('dark');
+    } else {
+        console.log('y');
+        // html.classList.remove('dark');
+        html.classList.add('light');
     }
-
-    let saved = localStorage.getItem("theme");
-
-    if (!saved || saved === "system") {
-        saved = window.matchMedia("(prefers-color-scheme: dark)").matches
-            ? "dark"
-            : "light";
-    }
-
-    applyTheme(saved);
-
 }
+
+// Run immediately when script loads
+// setSystemTheme();
+
+// Optional: Listen for system theme changes and update automatically
+// window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+//     const html = document.documentElement;
+//     if (e.matches) {
+//         html.classList.add('dark');
+//     } else {
+//         html.classList.remove('dark');
+//     }
+// });
+
+// function applyTheme(mode) {
+//     html.classList.remove("light", "dark");
+//     html.classList.add(mode);
+
+//     html.style.colorScheme = mode;
+//     localStorage.setItem("theme", mode);
+// }
 
 function initThemeToggle() {
     const themeToggleBtn = document.getElementById("theme-toggle");
