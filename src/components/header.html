@@ -1,18 +1,25 @@
-<section class="header pt-8 px-12 lg:px-16">
+<section class="header pt-4 md:pt-8 px-4 lg:px-16 ">
     <div class="header-container flex justify-between items-center">
-        <div class="logo"><span class="font-bold text-3xl">NS<span class="text-teal-400 text-5xl">.</span></span></div>
+        <div class="logo"><span class="font-bold text-lg md:text-3xl">NS<span
+                    class="text-teal-400 text-xl md:text-4xl">.</span></span></div>
         <div
-            class="flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
+            class="hidden md:flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
             <a href="#" class="px-3 py-2 transition text-teal-500 dark:text-teal-400">Home</a>
             <a href="#" class="px-3 py-2 transition">About</a>
             <a href="#" class="px-3 py-2 transition">Skills</a>
             <a href="#" class="px-3 py-2 transition">Contact</a>
         </div>
-        <div class="theme">
+        <div class="block theme">
+            <button id="menu-btn"
+                class="md:hidden rounded-full bg-white/90 p-2 shadow-lg ring-1 ring-zinc-900/5 dark:bg-zinc-800/90 dark:ring-white/10">
+                <svg class="w-6 h-6 stroke-zinc-700 dark:stroke-zinc-200" fill="none" viewBox="0 0 24 24"
+                    stroke-width="1.5">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
+                </svg>
+            </button>
             <button id="theme-toggle"
-                class="group rounded-full bg-white/90 px-3 py-2 shadow-lg ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20">
-
-                <!-- Light icon -->
+                class="hidden md:block group rounded-full bg-white/90 px-3 py-2 shadow-lg ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20">
                 <svg id="theme-toggle-light-icon"
                     class="h-6 w-6 hidden fill-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700"
                     viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
@@ -25,7 +32,6 @@
                         fill="none"></path>
                 </svg>
 
-                <!-- Dark icon -->
                 <svg id="theme-toggle-dark-icon"
                     class="w-6 h-6 hidden fill-zinc-700 stroke-zinc-500 transition group-hover:stroke-zinc-400"
                     viewBox="0 0 24 24" aria-hidden="true">
@@ -34,7 +40,26 @@
                         stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                 </svg>
             </button>
+
         </div>
 
+        <!-- <div> -->
+        <!-- <button id=""
+                class="md:hidden group rounded-full bg-white/90 px-3 py-2 shadow-lg ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20"><span
+                    class="text-teal-400 text-xl md:text-4xl">sfd</span>
+            </button> -->
+        <!-- </div> -->
+
     </div>
+
+    <div id="mobile-menu"
+        class="hidden md:hidden mt-4 rounded-2xl bg-white/95 p-4 shadow-lg ring-1 ring-zinc-900/5 backdrop-blur-sm dark:bg-zinc-800/95 dark:ring-white/10">
+        <nav class="flex flex-col gap-3 text-sm font-medium">
+            <a href="#" class="text-teal-500">Home</a>
+            <a href="#">About</a>
+            <a href="#">Skills</a>
+            <a href="#">Contact</a>
+        </nav>
+    </div>
+
 </section>
