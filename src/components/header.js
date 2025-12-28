@@ -1,4 +1,8 @@
-<section class="header pt-4 md:pt-8 px-4 lg:px-16 ">
+export function initHeader() {
+    const header = document.getElementById("header");
+
+    header.innerHTML = `
+    <section class="header pt-4 md:pt-8 px-4 lg:px-16 ">
     <div class="header-container flex justify-between items-center">
         <div class="logo"><span class="font-bold text-lg md:text-3xl">NS<span
                     class="text-teal-400 text-xl md:text-4xl">.</span></span></div>
@@ -42,14 +46,6 @@
             </button>
 
         </div>
-
-        <!-- <div> -->
-        <!-- <button id=""
-                class="md:hidden group rounded-full bg-white/90 px-3 py-2 shadow-lg ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20"><span
-                    class="text-teal-400 text-xl md:text-4xl">sfd</span>
-            </button> -->
-        <!-- </div> -->
-
     </div>
 
     <div id="mobile-menu"
@@ -61,5 +57,59 @@
             <a href="#">Contact</a>
         </nav>
     </div>
-
 </section>
+  `;
+
+    initMobileMenu();
+    initThemeToggle();
+}
+
+function initMobileMenu() {
+    const btn = document.getElementById("menu-btn");
+    const menu = document.getElementById("mobile-menu");
+
+    if (!btn || !menu) return;
+
+    btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+    });
+}
+
+function initThemeToggle() {
+    const themeToggleBtn = document.getElementById("theme-toggle");
+    const lightIcon = document.getElementById("theme-toggle-light-icon");
+    const darkIcon = document.getElementById("theme-toggle-dark-icon");
+
+    if (!themeToggleBtn || !lightIcon || !darkIcon) {
+        console.error("Theme toggle elements not found");
+        return;
+    }
+
+    // Initial state
+    if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
+        document.documentElement.classList.add("dark");
+        darkIcon.classList.remove("hidden");
+    } else {
+        document.documentElement.classList.remove("dark");
+        lightIcon.classList.remove("hidden");
+    }
+
+    // Click handler
+    themeToggleBtn.addEventListener("click", () => {
+        lightIcon.classList.toggle("hidden");
+        darkIcon.classList.toggle("hidden");
+
+        if (document.documentElement.classList.contains("dark")) {
+            document.documentElement.classList.remove("dark");
+            localStorage.theme = "light";
+        } else {
+            document.documentElement.classList.add("dark");
+            localStorage.theme = "dark";
+        }
+    });
+}
+
