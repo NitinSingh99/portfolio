@@ -1,4 +1,5 @@
 import { initHeader } from "../components/header.js";
+import "../css/input.css";
 
 console.log("JS running!");
 

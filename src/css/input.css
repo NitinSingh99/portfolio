@@ -1,5 +1,9 @@
-@import "tailwindcss";
+/* @import "tailwindcss";
 
 
 
-@variant dark (&:is(.dark *));
+@variant dark (&:is(.dark *)); */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
