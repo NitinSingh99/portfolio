@@ -2,7 +2,7 @@ export function initHeader() {
     const header = document.getElementById("header");
 
     header.innerHTML = `
-    <section class="header pt-4 md:pt-8 px-4 lg:px-16 ">
+    <section class="header pt-4 md:pt-8 px-4 lg:px-16">
     <div class="header-container flex justify-between items-center">
         <div class="logo"><span class="font-bold text-lg md:text-3xl">NS<span
                     class="text-teal-400 text-xl md:text-4xl">.</span></span></div>
@@ -60,8 +60,12 @@ export function initHeader() {
 </section>
   `;
 
-    initMobileMenu();
-    initThemeToggle();
+    // initMobileMenu();
+    // initThemeToggle();
+    setTimeout(() => {
+        initMobileMenu();
+        initThemeToggle();
+    }, 200);
 }
 
 function initMobileMenu() {
@@ -102,14 +106,56 @@ function initThemeToggle() {
     themeToggleBtn.addEventListener("click", () => {
         lightIcon.classList.toggle("hidden");
         darkIcon.classList.toggle("hidden");
-
+console.log('www');
         if (document.documentElement.classList.contains("dark")) {
+            console.log('x');
             document.documentElement.classList.remove("dark");
             localStorage.theme = "light";
         } else {
+            console.log('Y');
             document.documentElement.classList.add("dark");
             localStorage.theme = "dark";
         }
     });
 }
+// function initThemeToggle() {
+//     const themeToggleBtn = document.getElementById("theme-toggle");
+//     const lightIcon = document.getElementById("theme-toggle-light-icon");
+//     const darkIcon = document.getElementById("theme-toggle-dark-icon");
+//     console.log('toggle');
+//     if (!themeToggleBtn || !lightIcon || !darkIcon) {
+//         console.error("Theme toggle elements not found");
+//         return;
+//     }
 
+//     // Function to update icon visibility based on current theme
+//     function updateIcons() {
+//         if (document.documentElement.classList.contains("dark")) {
+//             // In dark mode, show the sun icon (to switch to light)
+//             lightIcon.classList.remove("hidden");
+//             darkIcon.classList.add("hidden");
+//         } else {
+//             // In light mode, show the moon icon (to switch to dark)
+//             lightIcon.classList.add("hidden");
+//             darkIcon.classList.remove("hidden");
+//         }
+//     }
+
+//     // Set initial icon state
+//     updateIcons();
+
+//     // Click handler
+//     themeToggleBtn.addEventListener("click", () => {
+//         console.log('xx');
+//         if (document.documentElement.classList.contains("dark")) {
+//             document.documentElement.classList.remove("dark");
+//             localStorage.theme = "light";
+//         } else {
+//             document.documentElement.classList.add("dark");
+//             localStorage.theme = "dark";
+//         }
+        
+//         // Update icons after toggle
+//         updateIcons();
+//     });
+// }
