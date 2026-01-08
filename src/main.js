@@ -1,4 +1,5 @@
 import { initHeader } from "./components/header.js";
+import { initHero } from "./components/hero.js";
 import "./css/main.css";
 
 console.log("JS running!");
@@ -8,6 +9,7 @@ init();
 function init() {
     setSystemTheme();
     initHeader();
+    initHero();
     initCodeAnimation();
 }
 
