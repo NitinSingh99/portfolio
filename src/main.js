@@ -17,7 +17,6 @@ function init() {
 function setSystemTheme() {
     const html = document.documentElement;
 
-    // Check localStorage first, then fall back to system preference
     if (localStorage.theme === 'dark' ||
         (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
         html.classList.add('dark');
