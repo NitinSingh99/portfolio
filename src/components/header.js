@@ -4,8 +4,8 @@ export function initHeader() {
     header.innerHTML = `
     <section class="header pt-4 md:pt-8 px-4 lg:px-16">
     <div class="header-container flex justify-between items-center">
-        <div class="logo"><span class="font-bold text-lg md:text-3xl">NS<span
-                    class="text-teal-400 text-xl md:text-4xl">.</span></span></div>
+        <div class="logo"><span class="font-bold text-lg md:text-3xl"><span
+                    class="text-teal-400 text-xl md:text-4xl"></span></span></div>
         <div
             class="hidden md:flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
             <a href="#" class="px-3 py-2 transition text-teal-500 dark:text-teal-400">Home</a>
