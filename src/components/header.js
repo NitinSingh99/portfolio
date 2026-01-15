@@ -15,7 +15,7 @@ export function initHeader() {
         </div>
         <div class="block theme">
             <button id="menu-btn"
-                class="md:hidden rounded-full bg-white/90 p-2 shadow-lg ring-1 ring-zinc-900/5 dark:bg-zinc-800/90 dark:ring-white/10">
+                class="lg:hidden rounded-full bg-white/90 p-2 shadow-lg ring-1 ring-zinc-900/5 dark:bg-zinc-800/90 dark:ring-white/10">
                 <svg class="w-6 h-6 stroke-zinc-700 dark:stroke-zinc-200" fill="none" viewBox="0 0 24 24"
                     stroke-width="1.5">
                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -49,7 +49,7 @@ export function initHeader() {
     </div>
 
     <div id="mobile-menu"
-        class="hidden md:hidden mt-4 rounded-2xl bg-white/95 p-4 shadow-lg ring-1 ring-zinc-900/5 backdrop-blur-sm dark:bg-zinc-800/95 dark:ring-white/10">
+        class="hidden lg:hidden mt-4 rounded-2xl bg-white/95 p-4 shadow-lg ring-1 ring-zinc-900/5 backdrop-blur-sm dark:bg-zinc-800/95 dark:ring-white/10">
         <nav class="flex flex-col gap-3 text-sm font-medium">
             <a href="#" class="text-teal-500">Home</a>
             <a href="#">About</a>
