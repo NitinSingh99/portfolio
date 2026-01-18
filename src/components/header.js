@@ -16,7 +16,7 @@ export function initHeader() {
         <div class="theme flex gap-2">
             <button id="menu-btn"
                 class="lg:hidden rounded-full bg-white/90 p-2 shadow-lg ring-1 ring-zinc-900/5 dark:bg-zinc-800/90 dark:ring-white/10">
-                <svg class="w-6 h-6 stroke-zinc-700 dark:stroke-zinc-200" fill="none" viewBox="0 0 24 24"
+                <svg class="w-6 h-6fill-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700" fill="none" viewBox="0 0 24 24"
                     stroke-width="1.5">
                     <path stroke-linecap="round" stroke-linejoin="round"
                         d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
