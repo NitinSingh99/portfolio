@@ -9,7 +9,7 @@ init();
 function init() {
     setSystemTheme();
     initHeader();
-    // initHero();
+    initHero();
     initCodeAnimation();
 }
 
