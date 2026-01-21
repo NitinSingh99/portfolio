@@ -58,7 +58,7 @@ export function initHero() {
                   border border-zinc-200 dark:border-zinc-700/50
                   bg-transparent dark:bg-zinc-800/90
                   backdrop-blur-sm
-                  h-65 md:h-70 lg:h-47.5
+                  h-45 md:h-45 lg:h-47.5
                   flex flex-col
                 ">
                   <div class="
@@ -70,10 +70,6 @@ export function initHero() {
                       <div class="w-2 h-2 lg:w-3 lg:h-3 rounded-full bg-red-500/80"></div>
                       <div class="w-2 h-2 lg:w-3 lg:h-3 rounded-full bg-yellow-500/80"></div>
                       <div class="w-2 h-2 lg:w-3 lg:h-3 rounded-full bg-green-500/80"></div>
-                    </div>
-
-                    <div class="ml-4 text-xs font-mono text-zinc-600 dark:text-zinc-400">
-                      JavaScript
                     </div>
                   </div>
 
