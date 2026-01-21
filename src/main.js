@@ -25,12 +25,18 @@ function setSystemTheme() {
     }
 }
 
+document.querySelector('.toggle').addEventListener('click', function () {
+    const svg = this.querySelector('svg');
+    svg.classList.toggle('rotate-45');
+    svg.classList.toggle('scale-80');
+});
+
 export function initCodeAnimation() {
     const codeDisplay = document.getElementById('code-display');
     if (!codeDisplay) return;
 
     const codeSnippet =
-    `const developer = {
+        `const developer = {
     name: "Nitin Singh",
     whatIDo: "Digital solutions to real-world problems"
     };`;
