@@ -25,11 +25,35 @@ function setSystemTheme() {
     }
 }
 
-document.querySelector('.toggle').addEventListener('click', function () {
-    const svg = this.querySelector('svg');
-    svg.classList.toggle('rotate-45');
-    svg.classList.toggle('scale-80');
-});
+// document.querySelector('.toggle').addEventListener('click', function () {
+//     const svg = this.querySelector('svg');
+//     svg.classList.toggle('rotate-45');
+//     svg.classList.toggle('scale-80');
+// });
+
+function toggleProject(container) {
+    const wrapper = container.parentElement;
+    const details = wrapper.querySelector(".project-details");
+    const icon = wrapper.querySelector(".toggle-icon");
+
+    const isOpen = details.classList.contains("max-h-[500px]");
+
+    // close all others (optional, accordion behavior)
+    document.querySelectorAll(".project-details").forEach(el => {
+      el.classList.remove("max-h-[500px]", "opacity-100");
+      el.classList.add("max-h-0", "opacity-0");
+    });
+
+    document.querySelectorAll(".toggle-icon").forEach(el => {
+      el.classList.remove("rotate-45");
+    });
+
+    if (!isOpen) {
+      details.classList.remove("max-h-0", "opacity-0");
+      details.classList.add("max-h-[500px]", "opacity-100");
+      icon.classList.add("rotate-45");
+    }
+  }
 
 export function initCodeAnimation() {
     const codeDisplay = document.getElementById('code-display');
