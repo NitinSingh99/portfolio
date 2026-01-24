@@ -6,7 +6,7 @@ export function initHero() {
           <div
             class="hero-content mt-10 md:mt-12 lg:mt-24 px-4 md:px-8 lg:px-16 flex flex-col lg:flex-row items-center lg:items-center lg:justify-between">
             <div class="flex flex-col items-start">
-              <p class="text-3xl md:text-5xl lg:text-7xl font-extrabold leading-10 md:leading-16 lg:leading-24">Hi, I'm
+              <p class="text-3xl md:text-5xl lg:text-7xl font-extrabold leading-10 md:leading-16 lg:leading-24 text-zinc-800 dark:text-zinc-100">Hi, I'm
                 Nitin,<br>a Full Stack Web Developer</p>
               <div class="lg:hidden hero-icons px-0 lg:px-16">
                 <div class="mt-2 flex gap-6"><a class="group -m-1 p-1" aria-label="Follow on X" href="#"><svg
