@@ -118,3 +118,4 @@ export function initHero() {
           </div>
         </div>`;
 }
+
