@@ -1,5 +1,7 @@
 import { initHeader } from "./components/header.js";
 import { initHero } from "./components/hero.js";
+import { initProject } from "./components/project.js";
+import { initExp } from "./components/experience.js";
 import "./css/main.css";
 
 console.log("JS running!");
@@ -11,9 +13,10 @@ function init() {
     initHeader();
     initHero();
     initCodeAnimation();
+    initProject();
+    initExp();
 }
 
-// Function to set theme based on system preference
 function setSystemTheme() {
     const html = document.documentElement;
 
@@ -25,44 +28,14 @@ function setSystemTheme() {
     }
 }
 
-// document.querySelector('.toggle').addEventListener('click', function () {
-//     const svg = this.querySelector('svg');
-//     svg.classList.toggle('rotate-45');
-//     svg.classList.toggle('scale-80');
-// });
-
-function toggleProject(container) {
-    const wrapper = container.parentElement;
-    const details = wrapper.querySelector(".project-details");
-    const icon = wrapper.querySelector(".toggle-icon");
-
-    const isOpen = details.classList.contains("max-h-[500px]");
-
-    // close all others (optional, accordion behavior)
-    document.querySelectorAll(".project-details").forEach(el => {
-      el.classList.remove("max-h-[500px]", "opacity-100");
-      el.classList.add("max-h-0", "opacity-0");
-    });
-
-    document.querySelectorAll(".toggle-icon").forEach(el => {
-      el.classList.remove("rotate-45");
-    });
-
-    if (!isOpen) {
-      details.classList.remove("max-h-0", "opacity-0");
-      details.classList.add("max-h-[500px]", "opacity-100");
-      icon.classList.add("rotate-45");
-    }
-  }
-
-export function initCodeAnimation() {
+function initCodeAnimation() {
     const codeDisplay = document.getElementById('code-display');
     if (!codeDisplay) return;
 
     const codeSnippet =
         `const developer = {
     name: "Nitin Singh",
-    whatIDo: "Digital solutions to real-world problems"
+    whatIDo: "Digital solutions to real-world problems",
     };`;
 
     let currentIndex = 0;
@@ -86,12 +59,29 @@ export function initCodeAnimation() {
             }).join('');
 
             currentIndex++;
-            setTimeout(typeCode, 20);
+            requestAnimationFrame(() => {
+                setTimeout(typeCode, 20);
+            });
+
         }
     }
 
     typeCode();
 }
+
+const lenis = new Lenis({
+    duration: 1.1,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smoothWheel: true,
+    smoothTouch: false,
+})
+
+function raf(time) {
+    lenis.raf(time)
+    requestAnimationFrame(raf)
+}
+
+requestAnimationFrame(raf)
 
 
 
