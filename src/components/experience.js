@@ -1,7 +1,8 @@
 export function initExp() {
     const expSection = document.getElementById("workExp");
-    expSection.innerHTML = `<section id="experience" class="experience">
-        <div class="w-full px-4 md:px-8 lg:px-16">
+    expSection.innerHTML = `<section id="experience" class="experience bg-zinc-900/60 backdrop-blur-md border border-white/5
+rounded-2xl">
+        <div class="w-full px-4 md:px-8 lg:px-16 pb-12 lg:pb-00">
           <div class="w-full">
             <div class="flex items-center gap-2 block-header-title max-w-7xl mx-auto py-12 lg:py-20">
               <!-- <span class="w-2.5 h-2.5 lg:w-2.5 lg:h-2.5 rounded-full 
